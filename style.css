@@ -1,0 +1,257 @@
+/* custom */
+:root {
+  --clr-primary: hsl(4, 100%, 67%);
+  --clr-dark-slate-grey: hsl(234, 29%, 20%);
+  --clr-charcoal-grey: hsl(235, 18%, 26%);
+  --clr-grey: hsl(231, 7%, 60%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --fs-body: 1rem;
+
+  --ff-sans: "Roboto", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+/* resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-body);
+  min-height: 100svh;
+  text-rendering: optimizeSpeed;
+  background-color: var(--clr-charcoal-grey);
+  line-height: 1.5;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  background-color: var(--clr-white);
+}
+
+#content__img {
+  background-image: url(./assets/images/illustration-sign-up-mobile.svg);
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  width: 100vw;
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.content__info {
+  padding: 1.5rem;
+}
+
+.content__info h1 {
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-dark-slate-grey);
+  margin-bottom: 1rem;
+}
+
+.content__info p {
+  color: var(--clr-charcoal-grey);
+  margin-bottom: 1rem;
+}
+/* benefits */
+ul {
+  padding-left: 1.5rem;
+  margin-left: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  padding: 0 0 0 30px;
+  margin-bottom: 10px;
+}
+
+ul li span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+}
+
+#content__sign-up-form-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: var(--fw-bold);
+  margin-bottom: 0.25rem;
+}
+/* input */
+input[type="text"] {
+  padding: 0.75rem;
+  border: var(--clr-grey) solid 1px;
+  border-radius: 8px;
+  color: var(--clr-grey);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+  border: 1px solid var(--clr-dark-slate-grey);
+  color: var(--clr-charcoal-grey);
+  outline: none;
+}
+
+/* display for input when there is a error */
+#email.invalid {
+  background: rgb(255, 233, 230);
+  outline-color: var(--clr-primary);
+}
+
+#email.invalid:focus,
+#email.invalid::placeholder {
+  color: var(--clr-primary);
+}
+
+input[type="text"].invalid {
+  border-color: var(--clr-primary);
+}
+
+/* error message */
+.error {
+  position: absolute;
+  right: 0px;
+  padding: 0;
+  font-size: 80%;
+  color: var(--clr-primary);
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+/* button */
+button {
+  background-color: var(--clr-dark-slate-grey);
+  color: var(--clr-white);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  width: 100%;
+}
+
+button:hover,
+button:focus {
+  background: linear-gradient(
+    50deg,
+    rgb(208, 65, 122) 0%,
+    rgba(255, 114, 68, 0.881) 100%
+  );
+}
+
+/* confirmation message */
+#message {
+  background-color: var(--white);
+  margin-top: 80px;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+#message img {
+  width: 45px;
+  margin-bottom: 20px;
+}
+
+#message h3 {
+  font-size: 2rem;
+  color: var(--clr-dark-slate-grey);
+  font-weight: var(--fw-bold);
+  margin-bottom: 20px;
+}
+
+#message p {
+  color: var(--clr-dark-slate-grey);
+  margin-bottom: 200px;
+}
+
+#message p strong {
+  color: var(--clr-charcoal-grey);
+  font-weight: var(--fw-bold);
+}
+
+/* dessktop and tablet */
+@media screen and (min-width: 600px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  #content {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 760px;
+    height: 500px;
+  }
+
+  #content__img {
+    background-image: url(./assets/images/illustration-sign-up-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    width: 400px;
+    height: auto;
+    margin: 20px;
+  }
+
+  #content#message {
+    flex-direction: column;
+  }
+
+  #message p {
+    margin-bottom: 50px;
+  }
+}
